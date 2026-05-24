@@ -5,11 +5,8 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-      {/* Glow blob */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/15 rounded-full blur-[140px] pointer-events-none mix-blend-screen" />
-      {/* Second accent glow */}
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -29,7 +26,7 @@ export default function Hero() {
             Open to Work — Available for Full-Time Roles
           </motion.div>
 
-          {/* Greeting line */}
+          {/* Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +44,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4"
           >
-            Srinivasulu Maddula.
+            Ruthin Aireni.
           </motion.h1>
 
           {/* Role */}
@@ -57,9 +54,9 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-muted-foreground mb-6"
           >
-            I engineer cloud infrastructure <br className="hidden md:block" />
+            AI Developer &amp; DevOps Engineer <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
-              &amp; build intelligent AI systems.
+              building intelligent systems.
             </span>
           </motion.h2>
 
@@ -70,14 +67,14 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base md:text-lg text-muted-foreground max-w-2xl mb-4 leading-relaxed"
           >
-            DevOps Engineer &amp; AI Developer with hands-on experience across{" "}
-            <span className="text-primary font-medium">AWS, Azure, Kubernetes, Terraform</span>,{" "}
-            <span className="text-primary font-medium">CI/CD pipelines</span>, and{" "}
-            <span className="text-primary font-medium">LLM-powered applications</span>.
-            I automate the un-automatable and deploy with confidence.
+            Hands-on experience in{" "}
+            <span className="text-primary font-medium">AI chatbots, RAG pipelines &amp; LLMs</span>,{" "}
+            <span className="text-primary font-medium">n8n workflow automation</span>, and{" "}
+            <span className="text-primary font-medium">cloud DevOps (Azure, AWS, Kubernetes)</span>.
+            I bridge traditional IT with modern AI to build scalable, intelligent solutions.
           </motion.p>
 
-          {/* Location + role type */}
+          {/* Location + type */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,11 +83,11 @@ export default function Hero() {
           >
             <span className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4 text-primary" />
-              India — Open to Remote &amp; Relocation
+              Hyderabad, Telangana — Open to Remote &amp; Relocation
             </span>
             <span className="flex items-center gap-1.5">
               <Briefcase className="w-4 h-4 text-primary" />
-              Full-Time · Contract · Internship
+              Full-Time · Contract · Remote
             </span>
           </motion.div>
 
@@ -113,7 +110,7 @@ export default function Hero() {
               variant="outline"
               className="h-12 px-7 text-sm font-semibold rounded-md gap-2 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <a href="#contact" download>
+              <a href="#contact">
                 <Download className="w-4 h-4" />
                 Download Resume
               </a>
@@ -128,7 +125,7 @@ export default function Hero() {
             </Button>
           </motion.div>
 
-          {/* Quick stat pills */}
+          {/* Skill pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,27 +133,27 @@ export default function Hero() {
             className="flex flex-wrap gap-3 mt-10"
           >
             {[
-              { label: "2+ yrs Experience" },
-              { label: "AWS · Azure · GCP" },
-              { label: "Docker · Kubernetes" },
-              { label: "LLMs · RAG · n8n" },
-              { label: "Terraform · CI/CD" },
+              "AI / LLMs / RAG",
+              "n8n Automation",
+              "Azure · AWS",
+              "Docker · Kubernetes",
+              "CI/CD · Terraform",
+              "Prompt Engineering",
             ].map((pill) => (
               <span
-                key={pill.label}
+                key={pill}
                 className="text-xs font-mono px-3 py-1.5 rounded-full border border-border bg-card/60 text-muted-foreground"
               >
-                {pill.label}
+                {pill}
               </span>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Decorative side text */}
       <div className="absolute right-8 bottom-32 hidden lg:flex flex-col items-center gap-4 text-muted-foreground/40">
         <div className="w-[1px] h-24 bg-border" />
-        <span className="writing-vertical-rl font-mono text-xs tracking-widest uppercase" style={{ writingMode: "vertical-rl" }}>
+        <span className="font-mono text-xs tracking-widest uppercase" style={{ writingMode: "vertical-rl" }}>
           SCROLL TO EXPLORE
         </span>
       </div>

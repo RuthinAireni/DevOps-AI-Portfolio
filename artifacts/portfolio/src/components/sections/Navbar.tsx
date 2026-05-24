@@ -8,9 +8,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,17 +30,15 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <div className="w-9 h-9 rounded bg-primary/10 flex items-center justify-center border border-primary/30 group-hover:border-primary transition-colors">
             <Terminal className="text-primary w-4 h-4" />
           </div>
           <span className="font-mono font-bold text-lg tracking-tight text-white group-hover:text-primary transition-colors">
-            Srinu<span className="text-primary">.dev</span>
+            Ruthin<span className="text-primary">.dev</span>
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
           <ul className="flex items-center gap-5">
             {navLinks.map((link) => (
@@ -60,8 +56,8 @@ export default function Navbar() {
           <Button
             asChild
             size="sm"
-            className="gap-2 font-mono border-primary/50 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border"
             variant="outline"
+            className="gap-2 font-mono border-primary/50 bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border"
           >
             <a href="#contact">
               <Download className="w-3.5 h-3.5" />
@@ -70,7 +66,6 @@ export default function Navbar() {
           </Button>
         </nav>
 
-        {/* Mobile Toggle */}
         <button
           className="md:hidden text-muted-foreground hover:text-primary p-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -80,7 +75,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div

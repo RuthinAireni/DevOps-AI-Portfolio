@@ -5,20 +5,18 @@ export default function Footer() {
     <footer className="bg-background border-t border-border py-10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded bg-primary/10 border border-primary/30 flex items-center justify-center">
               <Terminal className="text-primary w-4 h-4" />
             </div>
             <span className="font-mono font-bold tracking-tight text-foreground">
-              Srinu<span className="text-primary">.dev</span>
+              Ruthin<span className="text-primary">.dev</span>
             </span>
           </div>
 
-          {/* Social links */}
           <div className="flex items-center gap-5">
             <a
-              href="mailto:srinivasuludevops@gmail.com"
+              href="mailto:ruthinaireni5@gmail.com"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
@@ -26,7 +24,7 @@ export default function Footer() {
               <span className="hidden sm:inline">Email</span>
             </a>
             <a
-              href="tel:+918106252799"
+              href="tel:9640748902"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
               aria-label="Phone"
             >
@@ -34,7 +32,7 @@ export default function Footer() {
               <span className="hidden sm:inline">Call</span>
             </a>
             <a
-              href="https://linkedin.com/in/srinivasulu-maddula"
+              href="https://linkedin.com/in/ruthinaireni5"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -44,7 +42,7 @@ export default function Footer() {
               <span className="hidden sm:inline">LinkedIn</span>
             </a>
             <a
-              href="https://github.com/srinivasulumaddula"
+              href="https://github.com/ruthinaireni5"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -55,18 +53,16 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Copyright */}
           <p className="text-xs text-muted-foreground font-mono text-center md:text-right">
-            Built by Srinivasulu Maddula &mdash; &copy; {new Date().getFullYear()}
+            Built by Ruthin Aireni &mdash; &copy; {new Date().getFullYear()}
           </p>
         </div>
 
-        {/* Recruiter note */}
         <div className="mt-6 pt-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground font-mono">
-            Available for{" "}
-            <span className="text-primary">DevOps · Cloud Engineering · AI Development</span>
-            {" "}roles &mdash; Full-time, Contract, or Remote
+            Open to{" "}
+            <span className="text-primary">AI Development · DevOps · Cloud Engineering · Automation</span>
+            {" "}roles — Full-time, Contract, or Remote
           </p>
         </div>
       </div>
