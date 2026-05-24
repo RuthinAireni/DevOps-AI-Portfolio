@@ -6,165 +6,116 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative bg-card/30">
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+    <section id="contact" className="py-24 bg-background">
+      <div className="container mx-auto px-6 md:px-10 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-mono text-sm mb-2">06. What's Next?</p>
-          <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6">
-            Get In Touch
+          <p className="text-primary font-mono text-sm font-medium mb-2">06. What's Next?</p>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-5">
+            Let's Work Together
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Available for full-time roles in <strong className="text-foreground">AI Development</strong>,{" "}
             <strong className="text-foreground">DevOps</strong>, and{" "}
-            <strong className="text-foreground">Cloud Engineering</strong>. If you have an opportunity or just want
-            to connect, my inbox is always open.
+            <strong className="text-foreground">Cloud Engineering</strong>. Let's build something great.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-5"
           >
-            <div className="bg-card border border-border rounded-xl p-8 space-y-5">
-              <h3 className="text-xl font-semibold mb-2">Contact Information</h3>
+            <div className="bg-white border border-border rounded-2xl p-7 shadow-card space-y-5">
+              <h3 className="text-lg font-bold text-foreground">Contact Information</h3>
 
-              <a
-                href="tel:9640748902"
-                className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                data-testid="link-phone"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors shrink-0">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-xs font-mono text-muted-foreground/60 mb-0.5">Phone</p>
-                  <p className="font-medium text-foreground">9640748902</p>
-                </div>
-              </a>
-
-              <a
-                href="mailto:ruthinaireni5@gmail.com"
-                className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                data-testid="link-email"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors shrink-0">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-xs font-mono text-muted-foreground/60 mb-0.5">Email</p>
-                  <p className="font-medium text-foreground">ruthinaireni5@gmail.com</p>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/ruthinaireni5"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                data-testid="link-linkedin"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors shrink-0">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-xs font-mono text-muted-foreground/60 mb-0.5">LinkedIn</p>
-                  <p className="font-medium text-foreground">linkedin.com/in/ruthinaireni5</p>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/ruthinaireni5"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                data-testid="link-github"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors shrink-0">
-                  <Github className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-xs font-mono text-muted-foreground/60 mb-0.5">GitHub</p>
-                  <p className="font-medium text-foreground">github.com/ruthinaireni5</p>
-                </div>
-              </a>
+              {[
+                { href: "tel:9640748902", icon: <Phone className="w-4 h-4" />, label: "Phone", value: "9640748902" },
+                { href: "mailto:ruthinaireni5@gmail.com", icon: <Mail className="w-4 h-4" />, label: "Email", value: "ruthinaireni5@gmail.com" },
+                { href: "https://linkedin.com/in/ruthinaireni5", icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", value: "linkedin.com/in/ruthinaireni5", external: true },
+                { href: "https://github.com/ruthinaireni5", icon: <Github className="w-4 h-4" />, label: "GitHub", value: "github.com/ruthinaireni5", external: true },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-secondary border border-border flex items-center justify-center text-muted-foreground group-hover:border-primary group-hover:text-primary transition-all shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-0.5">{item.label}</p>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{item.value}</p>
+                  </div>
+                </a>
+              ))}
 
               <div className="pt-4 border-t border-border">
-                <Button asChild size="lg" className="w-full gap-2 text-base">
-                  <a href="#" download="Ruthin_Aireni_Resume.pdf" data-testid="button-download-resume">
-                    <Download className="w-5 h-5" />
+                <Button asChild size="lg" className="w-full gap-2 rounded-full font-semibold">
+                  <a href="#" download="Ruthin_Aireni_Resume.pdf">
+                    <Download className="w-4 h-4" />
                     Download Resume
                   </a>
                 </Button>
               </div>
             </div>
 
-            {/* Availability badge */}
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4 text-center">
-              <p className="text-emerald-400 font-mono text-sm font-medium">
-                Open to Work — Hyderabad &amp; Remote
-              </p>
-              <p className="text-muted-foreground text-xs mt-1">
+            {/* Availability */}
+            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <p className="text-emerald-700 font-semibold text-sm">Open to Work — Hyderabad &amp; Remote</p>
+              </div>
+              <p className="text-emerald-600/80 text-xs">
                 DevOps · AI Development · Cloud Engineering · Automation
               </p>
             </div>
           </motion.div>
 
-          {/* Contact form */}
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card border border-border rounded-xl p-8"
+            className="bg-white border border-border rounded-2xl p-7 shadow-card"
           >
-            <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+            <h3 className="text-lg font-bold text-foreground mb-6">Send a Message</h3>
             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
-                <Input
-                  id="name"
-                  placeholder="Your name"
-                  className="bg-background"
-                  data-testid="input-name"
-                />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
+                  <Input id="name" placeholder="Your name" />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="company" className="text-sm font-medium text-foreground">Company</label>
+                  <Input id="company" placeholder="Company (optional)" />
+                </div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">Email</label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  className="bg-background"
-                  data-testid="input-email"
-                />
+                <Input id="email" type="email" placeholder="your@email.com" />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-foreground">Company (optional)</label>
-                <Input
-                  id="company"
-                  placeholder="Company name"
-                  className="bg-background"
-                  data-testid="input-company"
-                />
-              </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <label htmlFor="message" className="text-sm font-medium text-foreground">Message</label>
                 <Textarea
                   id="message"
                   placeholder="Hi Ruthin, I'd like to discuss a role..."
-                  className="min-h-[120px] bg-background"
-                  data-testid="input-message"
+                  className="min-h-[130px] resize-none"
                 />
               </div>
-              <Button type="submit" className="w-full gap-2" data-testid="button-send">
+              <Button type="submit" size="lg" className="w-full gap-2 rounded-full font-semibold">
                 <Send className="w-4 h-4" />
                 Send Message
               </Button>

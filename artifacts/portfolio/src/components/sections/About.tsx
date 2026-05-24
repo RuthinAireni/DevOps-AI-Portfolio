@@ -1,73 +1,72 @@
 import { motion } from "framer-motion";
-import { Code2, Server, Workflow, Bot } from "lucide-react";
+import { Code2, Server, Workflow, Bot, GraduationCap } from "lucide-react";
 
 export default function About() {
   const stats = [
     { label: "Roles & Internships", value: "3", icon: <Workflow className="w-5 h-5 text-primary" /> },
-    { label: "Cloud Platforms", value: "AWS / Azure", icon: <Server className="w-5 h-5 text-primary" /> },
-    { label: "AI Focus Areas", value: "LLM · RAG · n8n", icon: <Bot className="w-5 h-5 text-primary" /> },
-    { label: "Automation Workflows", value: "Private Repos", icon: <Code2 className="w-5 h-5 text-primary" /> },
+    { label: "Cloud Platforms", value: "AWS + Azure", icon: <Server className="w-5 h-5 text-primary" /> },
+    { label: "AI Focus", value: "LLM · RAG · n8n", icon: <Bot className="w-5 h-5 text-primary" /> },
+    { label: "Private AI Projects", value: "Built & Shipped", icon: <Code2 className="w-5 h-5 text-primary" /> },
   ];
 
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="about" className="py-24 relative bg-white">
+      <div className="container mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-12"
+          className="flex items-center gap-4 mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight">
-            <span className="text-primary font-mono text-2xl mr-2">01.</span> About Me
-          </h2>
+          <span className="text-primary font-mono text-sm font-medium">01.</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">About Me</h2>
           <div className="h-[1px] flex-1 bg-border max-w-xs" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Bio */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="space-y-5 text-lg text-muted-foreground leading-relaxed"
+            className="space-y-5 text-[17px] text-muted-foreground leading-relaxed"
           >
             <p>
               I am <strong className="text-foreground">Ruthin Aireni</strong>, an AI Developer and DevOps practitioner
               based in Hyderabad, India. I currently work as an{" "}
               <strong className="text-foreground">EDP Executive &amp; System Auditor</strong> at RSB Retail India
-              Limited, where I handle IT operations, L1 support, and system audit processes.
+              Limited, where I manage IT operations, L1 support, and system audit workflows.
             </p>
             <p>
-              Alongside my professional role, I have developed strong hands-on experience in{" "}
-              <strong className="text-foreground">Artificial Intelligence</strong> — particularly LLM-based chatbot
-              development, Retrieval-Augmented Generation (RAG), prompt engineering, and no-code/low-code automation
-              using <strong className="text-foreground">n8n</strong>. I have independently built AI-driven applications
-              and automation workflows hosted in private repositories.
+              Alongside my professional role, I have strong hands-on experience in{" "}
+              <strong className="text-foreground">Artificial Intelligence</strong> — building LLM-powered chatbots,
+              Retrieval-Augmented Generation (RAG) systems, and no-code/low-code automation pipelines using{" "}
+              <strong className="text-foreground">n8n</strong>. I have independently built AI-driven applications
+              hosted in private repositories.
             </p>
             <p>
-              At <strong className="text-foreground">VISWAM.AI</strong>, I contribute to building real-world AI
-              solutions with Python and Transformer models, including work on the{" "}
-              <strong className="text-foreground">Telugu LLM</strong> — India's foundational language model. My
-              internship at Vcube Software Solutions gave me deep hands-on experience with cloud infrastructure on{" "}
-              <strong className="text-foreground">AWS and Azure</strong>, Terraform, CI/CD pipelines, Docker, and
-              Kubernetes, along with mentoring students through cloud labs.
+              At <strong className="text-foreground">VISWAM.AI</strong>, I contribute to the{" "}
+              <strong className="text-foreground">Telugu LLM</strong> — India's foundational regional language model —
+              working with Python, Transformer models (GPT/BERT), and RAG pipelines. My cloud internship at
+              Vcube gave me deep hands-on experience across <strong className="text-foreground">AWS, Azure,
+              Terraform, Docker, and Kubernetes</strong>, plus mentoring students through live labs.
             </p>
 
-            {/* Key areas */}
+            {/* Areas */}
             <div className="pt-2">
-              <p className="text-sm font-mono text-primary mb-3">&gt; Key Areas of Interest</p>
+              <p className="text-sm font-mono text-primary font-medium mb-3">— Key Areas of Expertise</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {[
                   "AI Tools & Chatbot Development",
-                  "Prompt Engineering & LLM Applications",
-                  "Automation Workflows (API / No-code)",
+                  "Prompt Engineering & LLMs",
+                  "Automation Workflows (n8n / API)",
                   "IT Support & System Operations",
-                  "Cloud & DevOps (Azure, Docker, K8s)",
+                  "Cloud DevOps (Azure, Docker, K8s)",
                   "RAG Pipelines & Vector Databases",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="text-primary">▹</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -75,32 +74,50 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* Stats + Education */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
+            className="space-y-4"
           >
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="bg-card border border-border p-6 rounded-lg hover:border-primary/50 transition-colors group"
-              >
-                <div className="mb-4 p-3 bg-secondary rounded-md inline-block group-hover:scale-110 transition-transform">
-                  {stat.icon}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className="bg-background border border-border rounded-xl p-5 hover:border-primary/40 hover:shadow-card-hover transition-all duration-200 group"
+                >
+                  <div className="mb-3 p-2.5 bg-primary/8 rounded-lg inline-block group-hover:bg-primary/15 transition-colors">
+                    {stat.icon}
+                  </div>
+                  <div className="text-xl font-bold text-foreground mb-0.5 leading-tight">{stat.value}</div>
+                  <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
-                <div className="text-2xl font-bold text-foreground mb-1 font-mono leading-tight">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
 
             {/* Education card */}
-            <div className="col-span-2 bg-card border border-border p-6 rounded-lg hover:border-primary/50 transition-colors">
-              <p className="text-xs font-mono text-primary mb-2">&gt; Education</p>
-              <p className="font-semibold text-foreground">B.Tech — Mechanical Engineering</p>
-              <p className="text-sm text-muted-foreground">JNTUH College of Engineering, Hyderabad</p>
-              <p className="text-xs font-mono text-muted-foreground mt-1">July 2019 – January 2024</p>
+            <div className="bg-background border border-border rounded-xl p-5 hover:border-primary/40 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="p-2.5 bg-primary/8 rounded-lg shrink-0">
+                  <GraduationCap className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">B.Tech — Mechanical Engineering</p>
+                  <p className="text-sm text-muted-foreground mt-0.5">JNTUH College of Engineering, Hyderabad</p>
+                  <p className="text-xs font-mono text-muted-foreground/70 mt-1">July 2019 – January 2024</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quote card */}
+            <div className="bg-primary/5 border border-primary/15 rounded-xl p-5">
+              <p className="text-sm text-muted-foreground leading-relaxed italic">
+                "I am continuously expanding my skills in AI, cloud technologies, and DevOps practices,
+                with a focus on building scalable and efficient solutions that align with modern industry needs."
+              </p>
+              <p className="text-xs font-mono text-primary mt-3">— Ruthin Aireni</p>
             </div>
           </motion.div>
         </div>

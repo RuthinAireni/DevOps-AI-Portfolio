@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
@@ -10,12 +9,8 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
-  useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
-
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 font-sans overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-background text-foreground font-sans overflow-x-hidden flex flex-col">
       <Navbar />
       <main className="flex-1">
         <Hero />
