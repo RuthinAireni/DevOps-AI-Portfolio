@@ -1,7 +1,4 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// Safe fallback for PORT (only used in dev, not required in build)
+ Safe fallback for PORT (only used in dev, not required in build)
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5173
 
 export default defineConfig({
@@ -15,5 +12,5 @@ export default defineConfig({
   preview: {
     port: PORT
   }
-{ 
+{
 
